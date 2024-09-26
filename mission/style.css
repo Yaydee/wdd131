@@ -1,0 +1,45 @@
+body {
+    font-size: 20px;
+    line-height: 1.5;
+    border: 1px solid gray;
+    margin: auto;
+    padding: 3em;
+    max-width: 600px;
+}
+
+header {
+    text-align: center;
+    margin: 1em;
+    letter-spacing: 0.2rem;
+}
+
+main {
+    margin: 1rem;
+}
+
+h2 {
+    font-size: 16px;
+    color:#006EB6;
+    border-bottom: 1px solid gray;
+}
+li {
+    margin-bottom: 1em;
+}
+footer {
+    margin: 1em;
+    display: flex;
+}
+
+img {
+    width: 150px;
+    margin: 0 auto;
+}
+
+.dark {
+    background-color: black;
+    color: #A0D4ED;
+}
+
+.dark h2 {
+    color: white;
+}
