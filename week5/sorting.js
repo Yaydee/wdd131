@@ -102,3 +102,23 @@ function searchList(list, q) {
 }
 // console.log(searchList(simpleList, "an"));
 console.log(searchList(hikes, "water"));
+
+const myName = "Kyle Kerr";
+
+localStorage.setItem("name", myName);
+
+const storage = localStorage.getItem("name");
+console.log(storage);
+
+function setLocalStorage(key, data) {
+  localStorage.setItem(key, JSON.stringify(data));
+}
+
+function getLocalStorage(key) {
+  return JSON.parse(localStorage.getItem(key));
+}
+
+localStorage.setItem("hikes", JSON.stringify(hikes));
+
+const newHikes = JSON.parse(localStorage.getItem("hikes"));
+console.log(newHikes);
