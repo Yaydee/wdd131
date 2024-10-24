@@ -33,38 +33,63 @@ a {
     color: var(--primary-color);
 }
 
-main {
+section {
     display: grid;
-    grid-template: 1fr 1fr/1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 1fr;
 }
 
-section {
+section > div.info {
     padding: 1em;
     margin: 1em;
     grid-column-start: 1;
     border-right: 1px solid var(--secondary-color);
+    line-height: 0.5em;
     text-align: right;
 }
 
-article {
+section > article {
+    display: flex;
+    flex-wrap: wrap;
     padding: 1em;
     margin: 1em;
     grid-column-start: 2;
+    justify-content: center;
 }
 
-article.p{
-    font-size: 12px;
+section > article > p{
+    font-size: 14px;
 }
 
-h2 {
+/* img {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+} */
+
+section > h2 {
     font-family: var(--heading-font);
     color: var(--primary-color);
+    max-height: 3em;
 }
 
-div {
+.sidebar {
     padding: 1em;
     margin: 1em;
-    grid-column-start: 3;
-    grid-row-start: 1;
+    grid-column: 3 / span 3;
     border: 1px solid var(--secondary-color);
+}
+
+.skiptocontent a {
+	/* set the element to absolute positioning */
+    position:absolute;
+	/* move it off screen */
+    top: -60px;
+	/* Make sure it will be on the left edge of the screen */
+    text-align: left;
+	/* Change the background and color to something that stands out */
+    
+}
+.skiptocontent a:focus {
+	/* Move it back on when focused */
+    top: +60px
 }

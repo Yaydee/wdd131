@@ -23,5 +23,45 @@ const articles = [
 		ages: '12-16',
 		genre: 'Fantasy',
 		stars: '⭐⭐⭐⭐'
-	}
+	},
+	{
+		id: 3,
+		title: "Belgariad Book One: Pawn of Prophecy",
+		date: "Feb 12, 2022",
+		description:
+		'A fierce dispute among the Gods and the theft of a powerful Orb leaves the World divided into five kingdoms. Young Garion, with his "Aunt Pol" and an elderly man calling himself Wolf --a father and daughter granted near-immortality by one of the Gods -- set out on a complex mission.',
+		imgSrc:
+		"https://images-na.ssl-images-amazon.com/images/I/41ZxXA+nInL.jpg",
+		imgAlt: "Book cover for Pawn of Prophecy",
+		ages: "12-16",
+		genre: "Fantasy",
+		stars: "⭐⭐⭐⭐⭐"
+		}
 ]
+
+function listTemplate (article) {
+	return `<section>
+            	<div class = "info">
+                	<h3 class="date">${article.date}</h3>
+                	<p class="agerange">${article.ages}</p>
+                	<p class="genre">${article.genre}</p>
+                	<p class="rating">${article.stars}</p>
+            	</div>
+            	<article>
+                	<h2 class="title">${article.title}</h2>
+                	<img src=${article.imgSrc} alt=${article.imgAlt}>
+                	<p class="description">${article.description}</p>
+            	</article>
+        	</section>`
+}
+
+function buildArray(step) {
+	const newArticle = listTemplate(step);
+	main.insertAdjacentHTML("beforeend", newArticle);
+}
+
+const main = document.getElementById("maincontent");
+
+const stepsHtml = articles.map(buildArray);// use map to convert the list from strings to HTML
+// main.innerHTML = stepsHtml.join("")// set the innerHTML
+
