@@ -181,8 +181,8 @@ const items = [
 function itemTemplate(item) {
     return `<section class="${item.id}">
                 <img src="images/${item.itemImage}" alt="${item.itemName}">
-                <a class="item${item.id}-display">0</a>
                 <button aria-label="Minus ${item.itemName}" class="item${item.id}-minus">-</button>
+                <a class="item${item.id}-display">0</a>
                 <button aria-label="Plus ${item.itemName}" class="item${item.id}-plus">+</button>
             </section>`
 }
@@ -204,6 +204,7 @@ function buildItems(step) {
     });
     
     itemMinusElem.addEventListener("click",()=>{
+        if (step.itemCount == 0){return};
         step.itemCount = step.itemCount - step.itemMultiplier;
         updateItemDisplay(step);
     });
@@ -233,23 +234,13 @@ runsPlusElem.addEventListener("click",()=>{
 });
 
 runsMinusElem.addEventListener("click",()=>{
+    if (totalRuns == 0) {return};
     totalRuns--;
     updateDisplay();
 });
 
-// itemPlusElem.addEventListener("click",(item)=>{
-//     item.itemCount = item.itemCount + item.itemMultiplier;
-//     updateItemDisplay();
-// });
-
-// itemMinusElem.addEventListener("click",(item)=>{
-//     item.itemCount = item.itemCount - item.itemMultiplier;
-//     updateItemDisplay();
-// });
-
 function updateDisplay(){
     runsDisplayElem.innerHTML = totalRuns;
 };
-
 
 const itemsHtml = items.map(buildItems);
