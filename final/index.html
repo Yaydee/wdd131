@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Stylesheet" href="final.css">
-    <script src="final.js" defer></script>
+    <script src="final.js" type="module"></script>
+    <meta name="description" content="The purpose of this counter is to keep an account of one's earnings from cumulative Nucleus Bundles, also known as a Nucleus Run. Keep track of your total runs in the top bar, and add your earnings to each of the counters below. If you would like to see your totals, visit the breakdown page for your totals in text. Then copy, paste, and share your breakdown with your friends!">
     <title>Nucleus Runner</title>
 </head>
 <body>
@@ -14,18 +15,18 @@
     <header>
         <img src="images/runner-logo.jpg" alt="Nucleus Runner">
         <nav>
-            <a href="#">Count</a>
+            <a href="index.html">Count</a>
             <a href="breakdown.html">Breakdown</a>
         </nav>
     </header>
     <main id="maincontent">
         <h2>Purpose:</h2>
-        <p>The purpose of this counter is to keep an account of one's earnings from cumulative Nucleus Bundles, also known as a Nucleus Run. Keep track of your total runs in the top bar, and add your earnings to each of the counters below. If you would like to see your totals, visit the breakdown page for your totals in text. Then copy, paste, and share your breakdown with your friends!</p>
+        <p class="purpose">The purpose of this counter is to keep an account of one's earnings from cumulative Nucleus Bundles, also known as a Nucleus Run. Keep track of your total runs in the top bar, and add your earnings to each of the counters below. If you would like to see your totals, visit the breakdown page for your totals in text. Then copy, paste, and share your breakdown with your friends!</p>
         <div class="runs">
             <h2>Total Runs</h2>
-            <button class="runs-minus">-</button>           
-            <a class="runs-display">(..)</a>
-            <button class="runs-plus">+</button>
+            <button aria-label="Total Runs Minus" class="runs-minus">-</button>           
+            <p class="runs-display">(..)</p>
+            <button aria-label="Total Runs Plus" class="runs-plus">+</button>
         </div>
 
     </main>
