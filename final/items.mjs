@@ -181,6 +181,10 @@ export const items = [
 export function syncItems() {
     const syncedItems = items.map((step)=>{
         let savedCount = localStorage.getItem(step.itemName);
+        if (!savedCount) {
+            savedCount = 0
+            localStorage.setItem(`${step.itemName}`, savedCount);
+        }
         console.log(savedCount);
         step.itemCount = parseInt(savedCount);
         return step
